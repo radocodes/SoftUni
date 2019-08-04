@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SoftUni_Camp
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
             var numberOfGroups = int.Parse(Console.ReadLine());
             var car = 0.0;
@@ -17,31 +13,39 @@ namespace SoftUni_Camp
             var BigBus = 0.0;
             var train = 0.0;
             var allPeople = 0.0;
-            for (int i = 1; i <= numberOfGroups; i++)
+
+            for (int i = 0; i < numberOfGroups; i++)
             {
                 var membersInGroup = int.Parse(Console.ReadLine());
+
                 if (membersInGroup < 6)
                 {
                     car += membersInGroup;
                 }
+
                 else if (membersInGroup > 5 && membersInGroup < 13)
                 {
                     microbus += membersInGroup;
                 }
-                else if (membersInGroup > 12 && membersInGroup< 26)
+
+                else if (membersInGroup > 12 && membersInGroup < 26)
                 {
                     smallBus += membersInGroup;
                 }
+
                 else if (membersInGroup > 25 && membersInGroup < 41)
                 {
                     BigBus += membersInGroup;
                 }
+
                 else if (membersInGroup > 40)
                 {
                     train += membersInGroup;
                 }
+
                 allPeople += membersInGroup;
             }
+
             car = car / allPeople * 100;
             microbus = microbus / allPeople * 100;
             smallBus = smallBus / allPeople * 100;

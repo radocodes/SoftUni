@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Fox
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
             var n = int.Parse(Console.ReadLine());
 
@@ -18,6 +14,7 @@ namespace Fox
             var middlePartinMiddle = n;
             var line1 = 1;
             var middlePartDown = (2 * n + 3) - 4;
+
             for (int row = 1; row <= n; row++)
             {
                 Console.Write(new string('*', asterix1));
@@ -25,10 +22,12 @@ namespace Fox
                 Console.Write(new string('-', middlePartUp));
                 Console.Write("/");
                 Console.Write(new string('*', asterix1));
+
                 asterix1++;
                 middlePartUp = middlePartUp - 2;
                 Console.WriteLine();
             }
+
             for (int row = 1; row <= n / 3; row++)
             {
                 Console.Write("|");
@@ -38,10 +37,12 @@ namespace Fox
                 Console.Write("/");
                 Console.Write(new string('*', asterix2Left));
                 Console.Write("|");
+
                 asterix2Left++;
                 middlePartinMiddle = middlePartinMiddle - 2;
                 Console.WriteLine();
             }
+
             for (int row = 1; row <= n; row++)
             {
                 Console.Write(new string('-', line1));
@@ -49,6 +50,7 @@ namespace Fox
                 Console.Write(new string('*', middlePartDown));
                 Console.Write("/");
                 Console.Write(new string('-', line1));
+
                 line1++;
                 middlePartDown = middlePartDown - 2;
                 Console.WriteLine();
